@@ -2,7 +2,7 @@
  * @Author: Liangkang Zhang
  * @Date: 2026/1/25 00:03:04
  * @LastEditors: Liangkang Zhang
- * @LastEditTime: 2026/1/26 01:04:07
+ * @LastEditTime: 2026/1/27 00:53:57
  * @Description:
  * @Copyright: Copyright (©)}) 2026 Liangkang Zhang<lkzhang98@gmail.com>. All rights reserved. Use of this source code is governed by a MIT style license that can be found in the LICENSE file.. All rights reserved.
  * @Email: lkzhang98@gmail.com
@@ -13,6 +13,7 @@ package server
 
 import (
 	"context"
+	"net/http"
 	"time"
 
 	"github.com/geminik12/autostack/log"
@@ -46,4 +47,12 @@ func Serve(ctx context.Context, srv Server) error {
 	log.Infof("Server exited successfully.")
 
 	return nil
+}
+
+// protocolName 从 http.Server 中获取协议名.
+func protocolName(server *http.Server) string {
+	if server.TLSConfig != nil {
+		return "https"
+	}
+	return "http"
 }
