@@ -1,0 +1,30 @@
+/**FileHeader
+ * @Author: Liangkang Zhang
+ * @Date: 2026/1/27 00:00:47
+ * @LastEditors: Liangkang Zhang
+ * @LastEditTime: 2026/1/27 00:00:54
+ * @Description:
+ * @Copyright: Copyright (©)}) 2026 Liangkang Zhang<lkzhang98@gmail.com>. All rights reserved. Use of this source code is governed by a MIT style license that can be found in the LICENSE file.. All rights reserved.
+ * @Email: lkzhang98@gmail.com
+ * @Repository: https://github.com/geminik12/autostack
+ */
+package model
+
+const TableNameCasbinRuleM = "casbin_rule"
+
+// CasbinRuleM mapped from table <casbin_rule>
+type CasbinRuleM struct {
+	ID    int64   `gorm:"column:id;primaryKey;autoIncrement:true" json:"id"`
+	PType *string `gorm:"column:ptype" json:"ptype"`
+	V0    *string `gorm:"column:v0" json:"v0"`
+	V1    *string `gorm:"column:v1" json:"v1"`
+	V2    *string `gorm:"column:v2" json:"v2"`
+	V3    *string `gorm:"column:v3" json:"v3"`
+	V4    *string `gorm:"column:v4" json:"v4"`
+	V5    *string `gorm:"column:v5" json:"v5"`
+}
+
+// TableName CasbinRuleM's table name
+func (*CasbinRuleM) TableName() string {
+	return TableNameCasbinRuleM
+}
