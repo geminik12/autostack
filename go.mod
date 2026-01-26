@@ -12,6 +12,7 @@ require (
 	gopkg.in/natefinch/lumberjack.v2 v2.2.1
 	gorm.io/driver/mysql v1.6.0
 	gorm.io/gorm v1.31.1
+	k8s.io/utils v0.0.0-20260108192941-914a6e750570
 )
 
 require (
